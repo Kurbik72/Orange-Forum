@@ -1,0 +1,6 @@
+.post{
+    width: 100%; /* Ширина равна родителю */
+    max-width: 800px; /* Совпадает с max-width для .line */
+    box-sizing: border-box; /* Учитывает padding в ширину */
+    background-color: #2C353D;
+}

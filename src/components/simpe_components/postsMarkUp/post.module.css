@@ -1,0 +1,22 @@
+.PostSectionStyles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+    width: 100%;
+	
+    
+}
+.line{
+    display: flex;
+    gap: 20px;
+    padding: 0px 20px;
+    background-color: #262D34;
+    height: 5.375em;
+    border-radius: 16px;
+    width: 100%; /* Задает ширину блока равной родителю */
+    max-width: 800px; /* Ограничивает максимальную ширину для адаптивности */
+    box-sizing: border-box; /* Учитывает padding в ширину */
+    
+    
+}

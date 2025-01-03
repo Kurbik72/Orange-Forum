@@ -3,7 +3,8 @@ import logo  from '../../../assets/icons/Logo.png';
 import messages from '../../../assets/icons/Message.png';
 import notifications from   '../../../assets/icons/Notification.png';
 import Input from '../../ui/input';
-
+import { Link } from 'react-router-dom';
+import Profile from '../../ui/profile/profile';
 
 const Header = () => {
     return (
@@ -23,10 +24,8 @@ const Header = () => {
                 <a href=""><img src={notifications} alt="notifications icon" /></a>
             </div>
             <div className={header.profile}>
-            <div className={header.avatar}> 
-                <a href="#">+</a>
-            </div>
-            <div className={header.name}><a href="">Sign in</a></div>
+                <Profile src = {''} alt = {''} />
+            <div className={header.name}><Link to = {'/login'}>Sign in</Link></div>
             </div>
             
             </div>

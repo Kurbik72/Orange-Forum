@@ -24,12 +24,14 @@
 }
 .header{
     display: flex;
+    justify-content: space-between;
     background-color: #262D34;
 }
 .rightSite{
     display: flex;
     align-items: center;
-    padding: 0px 381px;
+    margin-right: 3%;
+    
 }
 .Uipanel{
     display: flex;
