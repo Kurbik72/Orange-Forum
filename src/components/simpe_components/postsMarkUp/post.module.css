@@ -14,9 +14,78 @@
     background-color: #262D34;
     height: 5.375em;
     border-radius: 16px;
-    width: 100%; /* Задает ширину блока равной родителю */
-    max-width: 800px; /* Ограничивает максимальную ширину для адаптивности */
-    box-sizing: border-box; /* Учитывает padding в ширину */
+    width: auto; 
+    box-sizing: border-box; 
     
     
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.content label h1{
+    display: flex;
+    justify-content: center;
+    font-family: Header;
+    color: white;
+}
+.content label  p{
+    display: flex;
+    justify-content: center;
+    font-family: Header;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.input1__content{
+    background-color: #262D34;
+    width: 30vw;
+    height: 46px;
+    border-radius: 6px;
+    padding: 0px 12px; 
+    outline:none;
+    font-family: Header;
+    color: aliceblue;
+    font-size: 14px;
+    font-weight: 500;
+}
+.inputTitle input{
+    color: rgb(16, 16, 16);
+    font-family: Header;
+    font-size:2rem;
+}
+.yourStory{
+    background-color:#262D34;
+    color:rgb(255, 255, 255);
+    width: 30vw;
+    height: 46px;
+    border-radius: 6px;
+    padding: 0px 12px; 
+    outline:none;
+    font-family: search;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.textTitle{
+    margin-top: 0.5em;
+}
+.textTitle input::placeholder{
+    font-family: Search;
+    
+}
+
+
+
+
+@media (max-width: 480px) {
+    .line {
+        width: auto;
+    }
+}
+@media (min-width: 1800px) {
+    .line {
+        width: auto;
+    }
 }

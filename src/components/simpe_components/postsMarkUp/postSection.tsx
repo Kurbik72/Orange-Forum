@@ -12,7 +12,7 @@ const  postModule = () => {
     const [text, setText] = useState('');
     const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if(e.key === 'Enter')
-        { setModalActive(true)};
+        { setModalActive(true)}
     }
     const onTextEdit = (e:React.ChangeEvent<HTMLInputElement>) => 
     {
@@ -31,7 +31,21 @@ return (
 
         <ModalWindow active = {modalActive} setActive = {setModalActive} >
             <div className={post.content}>
-                <input type="text" value={text} onChange = {onTextEdit} />
+                <div className={post.inputTitle}>
+                <label>
+                    <h1>Enter a title</h1>
+                <input className={post.input1__content} type="text" value={text} onChange = {onTextEdit} placeholder='Title' />
+                </label>
+                </div>
+                <div className={post.textTitle}>
+                <label>
+                    <p>tell your story</p>
+                <input className={post.yourStory} type="text" placeholder='your story' />
+                </label>
+                </div>
+                <CreateBtn/>
+                
+
             </div>
         </ModalWindow>
     </div>
