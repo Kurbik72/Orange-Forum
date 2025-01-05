@@ -1,9 +1,14 @@
 import React from 'react'
 import btnStyles from '../button/button.module.css';
-const button = ({onClick, onChange}:{onClick?: () => void, onChange?: () => void}) => {
+
+interface CreateBtnProps {
+    onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    onChange?: () => void;  
+}
+const button:React.FC<CreateBtnProps> = ({ ...props}) => {
 return (
     <div className={btnStyles.button}>
-        <button onClick = {onClick} onChange = {onChange}>Create Post</button>
+        <button {...props}>Create Post</button>
     </div>
 )
 }

@@ -52,7 +52,7 @@
     font-weight: 500;
 }
 .inputTitle input{
-    color: rgb(16, 16, 16);
+    color: rgb(255, 255, 255);
     font-family: Header;
     font-size:2rem;
 }
@@ -74,6 +74,9 @@
 .textTitle input::placeholder{
     font-family: Search;
     
+}
+.posts{
+    margin-top: 1.25em;
 }
 
 
