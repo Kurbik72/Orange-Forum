@@ -1,28 +1,54 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import post from './post.module.css'
 import CreateBtn from '../../ui/button/button';
 import CreateInput from '../../ui/createInput/createdInput';
 import Avatar from '../../ui/profile/profile';
-import ModalWindow from '.././../ui/modalToCreate/ModalWindow';
 import PostList from '../postList/postList';
 import {Post} from '../../../core/types/postItemProps';
+import PostModal from '../PostModal/PostModal';
+import { getPostData } from '../../../core/API/getPostData/getPostData';
+import { savePostsData } from '../../../core/API/savePostsData/savePostsData';
+
 const  postModule = () => {
-    const [posts, setPosts] = useState<Post[]>([  
-        {tittle: "Hi! I'm Mikhail",tag: "React",avatar: "/path/to/avatar.jpg",username: "Mikhail",views: "651,324",comments: "56",date: "3 weeks ago"},
-    ]);
+    const [posts, setPosts] = useState<Post[]>([]);
     const [tittle, setTittle] = useState('');
     const [text, setText] = useState('');
     const [modalActive, setModalActive] = useState(false);
+    const [tag, setTag] = useState<string[]>([]);
+    const [loading, setLoading] = useState<boolean>(true); 
+    const [error, setError] = useState<string | null>(null);
 
-    const addNewPost : (e:React.MouseEvent<HTMLButtonElement>) => void = (e) => {
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try{
+            const data = await   savePostsData();
+            setPosts(data); // Устанавливаем полученные данные
+        }
+        catch(error){
+            setError("Ошибка при загрузке данных"+ error);
+            
+        }finally{
+            setLoading(false);
+        }
+    };
+        fetchPosts();
+    }, []);
+    if (loading) return <div>Загрузка...</div>;
+    if (error) return <div>{error}</div>;
+
+    const combinedChangeHandler = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault();
     const newPost = {
         id: Date.now(),
         text,
+        tag,
         tittle,
     }
     setPosts([...posts, newPost]);
+    getPostData({tittle, tag, text});
     }
+    
+    
 
     const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if(e.key === 'Enter')
@@ -38,7 +64,7 @@ return (
         <div className={post.line}>
         <Avatar src = {''} alt = {''} />
         <CreateInput value = {tittle}  onChange={e=>setTittle(e.target.value)} onKeyDown={onKeyDown}/>
-        <CreateBtn   onClick ={() => setModalActive(true)} onChange = {() => {onTextEdit}} />
+        <CreateBtn   onClick ={() => setModalActive(true)} />
         </div>
 
         <div className={post.posts}>
@@ -46,36 +72,17 @@ return (
         </div>
 
 
-        <ModalWindow active = {modalActive} setActive = {setModalActive} >
-            <div className={post.content}>
-                <div className={post.inputTitle}>
-                <label>
-                    <h1>Enter a title</h1>
-                <input
-                className={post.input1__content} 
-                type="text" 
-                value={tittle} 
-                onChange = {e => setTittle(e.target.value)} 
-                placeholder='Title' />
-                </label>
-                </div>
-
-                <div className={post.textTitle}>
-                <label>
-                    <p>tell your story</p>
-                <input 
-                className={post.yourStory}
-                type="text" 
-                placeholder='your story'
-                value={text} 
-                onChange={onTextEdit} />
-                </label>
-                </div>
-                <CreateBtn onClick={addNewPost}/>
-                
-
-            </div>
-        </ModalWindow>
+        <PostModal
+        active={modalActive}
+        setActive={setModalActive}
+        tittle={tittle}
+        tag = {tag}
+        setTag = {setTag}
+        setTittle={setTittle}
+        text={text}
+        onTextEdit={onTextEdit}
+        combinedChangeHandler={combinedChangeHandler}
+        />
     </div>
     
 )

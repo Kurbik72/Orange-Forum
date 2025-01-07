@@ -1,7 +1,7 @@
 export interface Post {
     id?:number,
     tittle?: string;
-    tag?: string;
+    tag?: string[];
     avatar?: string;
     username?: string;
     views?: string;

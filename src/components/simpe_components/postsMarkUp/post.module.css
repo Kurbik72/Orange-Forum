@@ -19,69 +19,9 @@
     
     
 }
-.content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-.content label h1{
-    display: flex;
-    justify-content: center;
-    font-family: Header;
-    color: white;
-}
-.content label  p{
-    display: flex;
-    justify-content: center;
-    font-family: Header;
-    font-size: 1.5rem;
-    color: white;
-}
-
-.input1__content{
-    background-color: #262D34;
-    width: 30vw;
-    height: 46px;
-    border-radius: 6px;
-    padding: 0px 12px; 
-    outline:none;
-    font-family: Header;
-    color: aliceblue;
-    font-size: 14px;
-    font-weight: 500;
-}
-.inputTitle input{
-    color: rgb(255, 255, 255);
-    font-family: Header;
-    font-size:2rem;
-}
-.yourStory{
-    background-color:#262D34;
-    color:rgb(255, 255, 255);
-    width: 30vw;
-    height: 46px;
-    border-radius: 6px;
-    padding: 0px 12px; 
-    outline:none;
-    font-family: search;
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-.textTitle{
-    margin-top: 0.5em;
-}
-.textTitle input::placeholder{
-    font-family: Search;
-    
-}
 .posts{
     margin-top: 1.25em;
 }
-
-
-
-
 @media (max-width: 480px) {
     .line {
         width: auto;
@@ -92,3 +32,4 @@
         width: auto;
     }
 }
+

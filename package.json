@@ -7,12 +7,13 @@
     "start": "webpack serve --env port=3000",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
-    "server": "json-server --watch db.json"
+    "server": "json-server --watch db.json --port 8000"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@editorjs/header": "^2.8.8",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^17.0.21",
@@ -23,6 +24,7 @@
     "@types/webpack-dev-server": "^4.7.2",
     "css-loader": "^6.11.0",
     "file-loader": "^6.2.0",
+    "hbs": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "json-server": "^1.0.0-beta.3",
     "mini-css-extract-plugin": "^2.5.3",
@@ -40,6 +42,8 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "@editorjs/editorjs": "^2.30.7",
+    "axios": "^1.7.9",
     "classnames": "^2.5.1",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",

@@ -4,6 +4,8 @@ import btnStyles from '../button/button.module.css';
 interface CreateBtnProps {
     onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     onChange?: () => void;  
+    className?: string;
+    disabled?: boolean;
 }
 const button:React.FC<CreateBtnProps> = ({ ...props}) => {
 return (

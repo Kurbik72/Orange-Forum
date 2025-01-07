@@ -1,4 +1,20 @@
 {
-    "posts": []
-
+  "posts": [
+    {
+      "tittle": "",
+      "tag": [],
+      "text": ""
+    },
+    {
+      "id": "95d5",
+      "tittle": "Использование API Fetch",
+      "tag": [
+        "api",
+        "fetch",
+        "react",
+        "typescript"
+      ],
+      "text": ""
+    }
+  ]
 }
