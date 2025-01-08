@@ -8,16 +8,16 @@
     border-radius: 16px;
 }
 .post__title{
-    display: inline-block;
+    display: flex;
     font-family: Header;
     font-size: 18px;
     color: white;
-    white-space: nowrap; 
     max-width: 100%;
-    overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%; /* Ограничиваем ширину заголовка */
+    flex-wrap: wrap; /* Перенос элементов внутри */
 }
+
 
 .post__content{
     width: 100%; /* Ширина контейнера фиксируется по родителю */
@@ -27,17 +27,17 @@
     box-sizing: border-box; /* Для учета отступов */
 }
 .post__tag{
-    display: inline-block; /* Контейнер принимает ширину текста */
+    display:inline-flex; /* Контейнер принимает ширину текста */
     padding: 0.5em 1em; /* Отступы внутри контейнера */
-    text-align: center; /* Центрирование текста */
-    white-space: nowrap; 
+    align-items: center;
+    justify-content: center;
     max-width: 100%;
+    flex-wrap: wrap;
     overflow: hidden;
-    text-overflow: ellipsis;
     border-radius: 20px;
-    width: 4em;
-    height: 2em;
-    font-size: 15px;
+    width: auto; 
+    height: auto; 
+    font-size: 1em;
     background-color: #2C353D;
     font-family: Search;
     font-weight: 500;
@@ -76,6 +76,7 @@
 
 }
 @media (max-width:620px){
+
     .post__profile {
         flex-direction: column; /* Разрешите перенос содержимого */
         gap: 1em; /* Уменьшите отступы */
@@ -101,11 +102,12 @@
         padding: 0.5em; /* Уменьшить внутренние отступы */
     }
     .post__title{
-        font-size: 1em;
+        font-size: 0.8em;
         
     }
 }
 .tag__content{
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }

@@ -4,6 +4,7 @@
     align-items: center;
     margin-top: 1em;
     width: 100%;
+    background-color: #1e252b;
 	
     
 }
@@ -23,6 +24,10 @@
     margin-top: 1.25em;
 }
 @media (max-width: 480px) {
+    .posts{
+        width: 80%;
+        box-sizing: border-box;
+    }
     .line {
         width: auto;
     }
@@ -32,4 +37,10 @@
         width: auto;
     }
 }
-
+.error{
+    text-align: center;
+    margin-top: 1em;
+    font-family:Header;
+    color: red;
+    font-size: 1rem;
+}

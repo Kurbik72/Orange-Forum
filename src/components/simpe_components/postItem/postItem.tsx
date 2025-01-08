@@ -3,7 +3,6 @@ import postStyle from '../postItem/postItem.module.css';
 import Profile from '../../ui/profile/profile';
 
 import {PostItemProps} from '../../../core/types/postItemProps';
-import {useState, useEffect} from 'react';
 
 const postItem: React.FC<PostItemProps> = ({post}) => {
 return (

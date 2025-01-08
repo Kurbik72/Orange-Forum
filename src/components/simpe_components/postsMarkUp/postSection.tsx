@@ -8,6 +8,7 @@ import {Post} from '../../../core/types/postItemProps';
 import PostModal from '../PostModal/PostModal';
 import { getPostData } from '../../../core/API/getPostData/getPostData';
 import { savePostsData } from '../../../core/API/savePostsData/savePostsData';
+import Loading from '../../../assets/icons/loading.gif';
 
 const  postModule = () => {
     const [posts, setPosts] = useState<Post[]>([]);
@@ -21,20 +22,18 @@ const  postModule = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try{
-            const data = await   savePostsData();
-            setPosts(data); // Устанавливаем полученные данные
+            const data = await  savePostsData();
+            setPosts(data);
         }
         catch(error){
-            setError("Ошибка при загрузке данных"+ error);
-            
+            setError(`Ошибка при загрузке данных: ${error.message || error}`);   
         }finally{
             setLoading(false);
         }
     };
         fetchPosts();
     }, []);
-    if (loading) return <div>Загрузка...</div>;
-    if (error) return <div>{error}</div>;
+    
 
     const combinedChangeHandler = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault();
@@ -67,10 +66,16 @@ return (
         <CreateBtn   onClick ={() => setModalActive(true)} />
         </div>
 
+        {loading ?
+        ( <div className={post.loading}> <img src={Loading} alt="Loading" /></div>)
+        : error ? (
+            <div className={post.error}><h1>Произошла ошибка при отображении постов</h1></div>)
+            :(
         <div className={post.posts}>
-        <PostList posts={posts}/>    
+    <PostList posts={posts}/>    
         </div>
-
+        )}
+        
 
         <PostModal
         active={modalActive}

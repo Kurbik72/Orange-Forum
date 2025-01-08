@@ -7,6 +7,7 @@ import cross from '../../../assets/icons/remove.png';
 import { useContext, useEffect, useRef } from 'react';
 import { EditorContext } from '../../EditorContext';
 import TittleInput from '../../ui/TittleInput';
+import Tags from '../../ui/tags';
 
 
 
@@ -27,7 +28,6 @@ const PostModal: React.FC<PostModalProps> = ({
     setActive,
     tittle,
     setTittle,
-    text,
     combinedChangeHandler,
     tag,
     setTag,
@@ -72,13 +72,8 @@ const PostModal: React.FC<PostModalProps> = ({
             <div  className={modal.inputTitle}>
             <TittleInput tittle={tittle} setTittle={setTittle} />
             </div>
-            <div className={modal.modal__tags}><textarea
-            className={modal.tags__input}
-                value={tag}
-                onChange={(e) => setTag(e.target.value.split(',').map(t => t.trim()))}
-                placeholder='Add your tags'
-                /></div>
-            <div  id = "editorjs" className={modal.textTitle} >
+            <Tags tag={tag} setTag={setTag} />
+            <div  id = "editorjs" className={modal.text__content}>
             </div>
             <div className={modal.modal__button}>
             <CreateBtn onClick={combinedChangeHandler} disabled ={tittle.length > maxLength || tittle.length === 0} />

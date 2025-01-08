@@ -99,6 +99,7 @@ transition: 0.5s;
     margin-top: 1.25em;
 }
 .modal__button{
+    margin-top: 0.7em;
     display: flex;
     justify-content: center;
     
@@ -178,4 +179,15 @@ transition: 0.5s;
 .tags__input::placeholder{
     color: #d1b5b5;
     
+}
+.text__content{
+    background-color: white ;
+    font-family: Search;
+    font-size: 2rem;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+    border: 2px solid white;
+    border-radius: 4px;
+    padding:0;
+    margin: 0;
 }

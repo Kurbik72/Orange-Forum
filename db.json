@@ -3,16 +3,47 @@
     {
       "tittle": "",
       "tag": [],
+      "text": "",
+      "id": ""
+    },
+    {
+      "id": "39f2",
+      "tittle": "КАК СТАТЬ ФРОНТЕНДЕРОМ? ",
+      "tag": [
+        "frontend",
+        "html",
+        "css",
+        "лайфхак"
+      ],
       "text": ""
     },
     {
-      "id": "95d5",
-      "tittle": "Использование API Fetch",
+      "id": "84fa",
+      "tittle": "Всем привет!",
       "tag": [
-        "api",
-        "fetch",
+        "hi",
+        "разработка",
+        "программист"
+      ],
+      "text": ""
+    },
+    {
+      "id": "6da2",
+      "tittle": "КАК ПОФИКСИТЬ ОШИБКУ?",
+      "tag": [
+        "error",
+        "how",
+        "help",
+        "react"
+      ],
+      "text": ""
+    },
+    {
+      "id": "60a0",
+      "tittle": "Привет!",
+      "tag": [
         "react",
-        "typescript"
+        "css"
       ],
       "text": ""
     }
