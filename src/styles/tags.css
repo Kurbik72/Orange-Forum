@@ -1,0 +1,31 @@
+.rti--container {
+    --rti-bg: #262D34,
+    --rti-border: "#ccc",
+    --rti-main: "#3182ce",
+    --rti-radius: "0.375rem",
+    --rti-s: "0.5rem", /* spacing */
+    --rti-tag: color:#C5D0E6,
+    --rti-tag-remove: "#e53e3e";
+    font-family: Header;
+    
+}
+.rti--input{
+    font-family:Search;
+    font-weight: 700;
+    color: white;
+    background-color: #262D34;
+
+}
+.rti--input::placeholder{
+    font-family:Search;
+    font-weight: 700;
+    color: rgb(209, 209, 209);
+}
+.codex-editor__redactor{
+    margin-top: 1rem;
+    background-color: aliceblue;
+    border-radius: 9px;
+    
+}
+
+

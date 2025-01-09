@@ -1,0 +1,113 @@
+.post{
+    width: 100%; /* Контейнер занимает всю ширину родителя */
+    max-width: 600px; /* Максимальная ширина карточки */
+    margin: 0 auto; /* Центрировать карточку */
+    overflow-wrap: break-word; 
+    box-sizing: border-box; /* Учитывает padding в ширину */
+    background-color: #262D34;
+    border-radius: 16px;
+}
+.post__title{
+    display: flex;
+    font-family: Header;
+    font-size: 18px;
+    color: white;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    max-width: 100%; /* Ограничиваем ширину заголовка */
+    flex-wrap: wrap; /* Перенос элементов внутри */
+}
+
+
+.post__content{
+    width: 100%; /* Ширина контейнера фиксируется по родителю */
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em 2em;
+    box-sizing: border-box; /* Для учета отступов */
+}
+.post__tag{
+    display:inline-flex; /* Контейнер принимает ширину текста */
+    padding: 0.5em 1em; /* Отступы внутри контейнера */
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    flex-wrap: wrap;
+    overflow: hidden;
+    border-radius: 20px;
+    width: auto; 
+    height: auto; 
+    font-size: 1em;
+    background-color: #2C353D;
+    font-family: Search;
+    font-weight: 500;
+    color:#C5D0E6;
+    margin-top: 0.7em;
+}
+.post__profile{
+    display: flex;
+    margin-top: 1.938em;
+    gap: 8em;
+    justify-content: space-between; 
+}
+.post__statistic{
+    font-family: Search;
+    font-weight: 500;
+    color:#C5D0E6;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    
+}
+.post__avatar{
+    display: flex;
+    flex-direction: column;
+    font-family: Header;
+    color: white;
+    font-size: 14px;
+    
+}
+.post__date{
+    margin-top: 0.6em;
+    color:#C5D0E6; 
+    font-family: Search;
+    font-weight: 500;
+    font-size: 14px;
+
+}
+@media (max-width:620px){
+
+    .post__profile {
+        flex-direction: column; /* Разрешите перенос содержимого */
+        gap: 1em; /* Уменьшите отступы */
+    }
+    .post__statistic {
+        flex-wrap: wrap; /* Перенос элементов статистики */
+        gap: 20px; /* Уменьшите расстояние между элементами */
+    }
+    .post__content{
+        display: flex;
+    }
+    .post{
+        width: 100%; /* Уменьшить ширину до половины экрана */
+        margin: 0 auto; /* Центрировать блок */
+        padding: 0.5em; /* Уменьшить внутренние отступы */
+    }
+
+}
+@media (max-width:400px){
+    .post{
+        width: 100%; /* Уменьшить ширину до половины экрана */
+        margin: 0 auto; /* Центрировать блок */
+        padding: 0.5em; /* Уменьшить внутренние отступы */
+    }
+    .post__title{
+        font-size: 0.8em;
+        
+    }
+}
+.tag__content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}

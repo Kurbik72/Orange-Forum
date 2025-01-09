@@ -1,0 +1,24 @@
+@font-face {
+    font-family: Search;
+    src: url(../../../assets/fonts/Light.ttf);
+}
+.input{
+    display: flex;
+    align-items: center;
+    
+}
+.input input{
+    background-color: #2C353D;
+    width: 30vw;
+    height: 46px;
+    border-radius: 6px;
+    padding: 0px 12px; 
+    outline:none;
+    font-family: Search;
+    color: aliceblue;
+    font-size: 14px;
+    font-weight: 500;
+}
+.input input::placeholder{
+    color: #858EAD;
+}

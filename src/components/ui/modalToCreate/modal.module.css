@@ -1,0 +1,195 @@
+.modal{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+width: 100vw;
+background-color: rgba(0, 0, 0,0.4);
+position: fixed;
+top: 0;
+left: 0;
+opacity: 0;
+pointer-events: none;
+transition: 0.5s;
+}
+.modal__content{
+    
+    padding: 20px;
+    border-radius: 6px;
+    background-color: #262D34;
+    width: 85vw;
+    height: 80vh; /* Ограничиваем высоту модального окна */
+    overflow-y: auto; /* Включаем скролл по вертикали */
+    transform: scale(0.5);
+    transition: 0.4s all;
+    box-sizing: border-box;
+    
+}
+.modal.active{
+    pointer-events: all;
+    opacity: 1;
+    
+}
+.modal__content.active{
+    transform: scale(1);
+}
+.content{
+    display: flex;
+    flex-direction: column;
+}
+.content label h1{
+    display: flex;
+    
+    font-family: Header;
+    color: white;
+}
+.content label  p{
+    display: flex;
+    justify-content: center;
+    font-family: Header;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.input1__content{
+    background-color: #262D34;
+    width:100%;
+    max-width: 100%;
+    border-radius: 6px;
+    padding: 0px 12px; 
+    outline:none;
+    font-family: Header;
+    color: aliceblue;
+    font-size: 2rem;
+    font-weight: 500;
+    resize: none;
+    box-sizing: border-box;
+}
+.input1__content::placeholder{
+    color: #e0e0e0;
+}
+.inputTitle input{
+    color: rgb(255, 255, 255);
+    font-family: Header;
+    font-size:2.5rem;
+}
+.inputTitle{
+    margin-top:1.5em;
+}
+.yourStory{
+    background-color:#262D34;
+    color:rgb(255, 255, 255);
+    width: 30vw;
+    height: 46px;
+    border-radius: 6px;
+    padding: 0px 12px; 
+    outline:none;
+    font-family: search;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.textTitle{
+    margin-top: 0.5em;
+}
+.textTitle input::placeholder{
+    font-family: Search;
+    
+}
+.posts{
+    margin-top: 1.25em;
+}
+.modal__button{
+    margin-top: 0.7em;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+@media (max-width: 480px) {
+    .modal__Header h1{
+        font-size: 1rem;
+
+    }
+    .modal__Header img{
+        width: 10px; 
+        height: 15px;
+    }
+}
+
+.modal__Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 0.75rem;
+    font-family:Search;
+    color: #afafaf;
+}
+.modal__Header h1{
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 0; 
+}
+.modal__Header img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 30px; 
+    height: 30px; 
+    transition: transform 0.2s; /* Плавный эффект */
+}
+.modal__Header img:hover {
+    transform: scale(1.1); /* Увеличиваем крестик при наведении */
+}
+.modal__line{
+    border: none;
+    border-top: 1px solid #ccc; 
+    margin: 15px 0; 
+    width: 100%; /* Растягиваем линию на всю ширину контейнера */
+    box-sizing: border-box; /* Учитываем отступы (если есть) */
+}
+.modal__profile{
+    padding: 0rem 1rem;
+}
+.error__content{
+    border: 1px solid red;
+}
+.error__message{
+    color: red;
+    text-align: center;
+    font-size: 0.8rem;
+    font-family: Search;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+.tags__input{
+    background-color:#262D34;
+    color:rgb(255, 255, 255);
+    border-radius: 6px;
+    padding: 0px 12px; 
+    outline: none;
+    font-family: search;
+    font-size: 1.3rem;
+    font-weight: 600;
+    resize: none;
+    box-sizing: border-box;
+    width:100%;
+    max-width: 100%;
+}
+.tags__input::placeholder{
+    color: #d1b5b5;
+    
+}
+.text__content{
+    
+    font-family: Search;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+    
+    border-radius: 4px;
+    padding:0;
+    margin: 0;
+}
+
+
