@@ -1,0 +1,30 @@
+.avatar{
+    border: #EA942C solid 2px;
+    border-radius: 8px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+.avatar img{
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+.avatar p{
+    text-decoration: none;
+    font-family: Header;
+    color: #FFFFFF;
+    font-size: 35px;
+}
+.border{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.name a{
+    font-family: Header;
+    color: #FFFFFF;
+    text-decoration: none;
+}

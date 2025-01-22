@@ -1,0 +1,159 @@
+@font-face {
+    font-family: Header;
+    src: url(../assets/fonts/bold.ttf);
+}
+@font-face {
+    font-family: Search;
+    src: url(../assets/fonts/Light.ttf);
+}
+
+* {
+	margin: 0;
+	padding: 0px;
+	margin: 0px;
+	border: none;
+
+
+
+
+}
+
+
+.logincontainer {
+	background-color: #262D34;
+	border-radius: 10px;
+	padding: 2rem;
+	width: 100%;
+	max-width: 400px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	
+}
+
+.logincontainer h1 {
+	font-family: Header;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.logincontainer label {
+	font-family: Search;
+	align-self: flex-start;
+	margin: 0.5rem 0 0.2rem;
+}
+
+.logincontainer input {
+	font-family: Header;
+	width: 100%;
+	padding: 0.8rem;
+	margin-bottom: 1rem;
+	border: none;
+	border-radius: 5px;
+	background-color: #1e252d;
+	color: white;
+	border: none;
+}
+
+.logincontainer button {
+	width: 100%;
+	padding: 0.8rem;
+	border: none;
+	border-radius: 5px;
+	background-color: white;
+	color: #1e252d;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.logincontainer button:hover {
+	background-color: rgb(210, 208, 208);
+	color: #1e252d;
+}
+
+.logincontainer a {
+	color: white;
+	text-decoration: none;
+	font-size: 0.9rem;
+	margin-top: 0.5rem;
+}
+
+.logincontainer a:hover {
+	text-decoration: underline;
+}
+
+.rememberme {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 1rem;
+	
+}
+
+.rememberme input {
+	margin-right: 0.5rem;
+}
+.loginPage{
+	background-color: #1e252d;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	
+}
+.line{
+	font-family: Search;
+}
+.rememberme {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 1rem;
+	justify-content: flex-start;
+}
+
+.customcheckbox {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.customcheckbox input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.customcheckbox span {
+	width: 20px;
+	height: 20px;
+	background-color: #1e252d;
+	border: 2px solid white;
+	border-radius: 4px;
+	display: inline-block;
+	margin-right: 0.5rem;
+	transition: background-color 0.3s, border-color 0.3s;
+}
+.customcheckbox input:checked + span {
+	background-color: white;
+	border-color: white;
+}
+
+.customcheckbox label {
+	margin: 0;
+	color: white;
+	cursor: pointer;
+}
+.error{
+	color: red;
+	font:var(--font-m);
+	font-family: Header;
+	flex-wrap: wrap;
+	margin-top: 1.5em;
+}

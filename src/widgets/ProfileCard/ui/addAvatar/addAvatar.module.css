@@ -1,0 +1,51 @@
+
+
+.addAvatar{
+    width: 100%;
+    background-color: #262d34;
+    display: flex;
+    border-radius: 9px;
+
+
+}
+.content{
+    padding: 2em 2em;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+.avatarBlock__column{
+    flex-direction: column;
+}
+.avatarBlock__column p{
+    font-family: Header;
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+}
+.content button{
+    width: 112px;
+    height: 44px;
+    border-radius: 9px;
+    cursor: pointer;
+    background-color:#FF6934;
+    font-family: Header;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+
+}
+.avatar {
+    display: flex;
+    justify-content: center;
+}
+@media (max-width: 480px) {
+    .addAvatar {
+        width: auto;
+    }
+}
+.avatar input {
+    display: none;
+}
+.avatar label {
+    cursor: pointer;
+}

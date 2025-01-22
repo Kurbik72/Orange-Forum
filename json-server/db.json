@@ -1,0 +1,52 @@
+{
+  "posts": [
+    {
+      "id": "5dbc",
+      "tittle": "Привет!",
+      "tag": [],
+      "text": "",
+      "author": "typicode"
+    },
+    {
+      "id": "7027",
+      "tittle": "ВООООООУУУУsffsУУУУУУУУУУ",
+      "tag": [
+        "react",
+        "css",
+        "js"
+      ],
+      "text": "",
+      "author": "typicode"
+    },
+    {
+      "id": "4739",
+      "tittle": "ДЖС ТОП?",
+      "tag": [],
+      "text": "",
+      "author": "typicode"
+    },
+    {
+      "tittle": "Привет, мир!",
+      "tag": [],
+      "text": "",
+      "id": "j694-qa"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123",
+      "avatar": "http://localhost:8000/uploads/1737574990753-Unofficial_JavaScript_logo_2.svg.png"
+    },
+    {
+      "id": 2,
+      "username": "mikhail",
+      "password": "123",
+      "avatar": "http://localhost:8000/uploads/1737468895768-photo_2024-12-04_01-47-48.jpg"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

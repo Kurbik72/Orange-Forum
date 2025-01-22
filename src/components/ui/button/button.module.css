@@ -1,0 +1,19 @@
+@font-face {
+    font-family: Header;
+    src: url(../../../assets//fonts/bold.ttf);
+}
+.button{
+    display: flex;
+    align-items: center;
+    
+}
+.button button{
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: Header;
+    font-weight: 14px;
+    color: #FFFFFF;
+    background-color: #FF6934;
+    width: 112px;;
+    height: 44px;
+}

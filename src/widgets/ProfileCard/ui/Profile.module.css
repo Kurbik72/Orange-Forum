@@ -1,0 +1,10 @@
+.ProfileCard{
+    background-color: #1e252b;
+    height: 100vh; /* Занимает всю высоту экрана */
+    
+}
+.ProfileCard__content{
+    display: flex;
+    justify-content: center;
+    padding: 5em;
+}

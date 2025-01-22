@@ -1,0 +1,46 @@
+.PostSectionStyles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+    width: 100%;
+    background-color: #1e252b;
+	
+    
+}
+.line{
+    display: flex;
+    gap: 20px;
+    padding: 0px 20px;
+    background-color: #262D34;
+    height: 5.375em;
+    border-radius: 16px;
+    width: auto; 
+    box-sizing: border-box; 
+    
+    
+}
+.posts{
+    margin-top: 1.25em;
+}
+@media (max-width: 480px) {
+    .posts{
+        width: 80%;
+        box-sizing: border-box;
+    }
+    .line {
+        width: auto;
+    }
+}
+@media (min-width: 1800px) {
+    .line {
+        width: auto;
+    }
+}
+.error{
+    text-align: center;
+    margin-top: 1em;
+    font-family:Header;
+    color: red;
+    font-size: 1rem;
+}
