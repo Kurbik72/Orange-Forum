@@ -7,11 +7,7 @@ export const savePostsData = async (): Promise<Post[]> => {
         if (!response.ok) {
             throw new Error(`HTTP ошибка: ${response.status}`);
         }
-        return posts.map((post: { tittle: string; tag?: string[]; text: string }) => ({
-            tittle: post.tittle,
-            tag: post.tag,
-            text: post.text,
-        }));
+        return posts
     
     
 }

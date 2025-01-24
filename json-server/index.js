@@ -94,6 +94,29 @@ server.use((req, res, next) => {
     }
     authMiddleware(req, res, next);
 });
+server.post('/posts', (req, res, next) => {
+    if (req.user) {
+        req.body.userId = req.user.id; // Привязываем пост к пользователю
+    }
+    next(); // Передаем управление стандартному обработчику json-server
+});
+server.get('/posts', (req, res, next) => {
+    const users = router.db.get('users').value();
+    console.log(users);
+    const posts = router.db
+        .get('posts')
+        .value()
+        .map(p => {
+            const {username, avatar} = users.find(u => u.id === p.userId)
+            p.user = {
+                id: p.userId,
+                username: username,
+                avatar: avatar
+            };
+            return p;
+        })
+    res.json(posts);
+});
 
 // Эндпоинт для загрузки аватара
 server.post('/upload', upload.single('file'), (req, res) => {
@@ -108,6 +131,7 @@ server.post('/upload', upload.single('file'), (req, res) => {
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
+
 
         const fileUrl = `http://localhost:8000/uploads/${req.file.filename}`;
         router.db.get('users')

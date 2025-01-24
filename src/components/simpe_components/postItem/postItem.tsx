@@ -3,12 +3,11 @@ import postStyle from '../postItem/postItem.module.css';
 import Profile from '../../ui/profile/profile';
 
 import {PostItemProps} from '../../../core/types/postItemProps';
-import { useSelector } from 'react-redux';
-import { getUserAuthData } from '../../../entities/User';
+
+
 
 const postItem: React.FC<PostItemProps> = ({post}) => {
 
-    const isAuth = useSelector(getUserAuthData);
 
 return (
 
@@ -24,7 +23,7 @@ return (
             }
             <div className={postStyle.post__profile}>
                 <div className={postStyle.post__avatar}>
-            <Profile  username= {isAuth?.username} /> 
+            <Profile  username= {post.user?.username} src={post.user?.avatar} /> 
             </div>
             <div className={postStyle.post__statistic}>
                 <p>{post.views} Views </p>

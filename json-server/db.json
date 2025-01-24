@@ -1,43 +1,77 @@
 {
   "posts": [
     {
-      "id": "5dbc",
-      "tittle": "Привет!",
-      "tag": [],
-      "text": "",
-      "author": "typicode"
-    },
-    {
-      "id": "7027",
-      "tittle": "ВООООООУУУУsffsУУУУУУУУУУ",
+      "tittle": "Привет! люблю JavaScript",
       "tag": [
         "react",
         "css",
         "js"
       ],
       "text": "",
-      "author": "typicode"
+      "userId": 1,
+      "id": 1,
+      "user": {
+        "id": 1,
+        "username": "admin",
+        "avatar": "http://localhost:8000/uploads/1737720270699-photo_2024-12-04_01-47-48.jpg"
+      }
     },
     {
-      "id": "4739",
-      "tittle": "ДЖС ТОП?",
+      "tittle": "dfgdfg\n",
       "tag": [],
       "text": "",
-      "author": "typicode"
+      "userId": 1,
+      "id": 2,
+      "user": {
+        "id": 1,
+        "username": "admin",
+        "avatar": "http://localhost:8000/uploads/1737720270699-photo_2024-12-04_01-47-48.jpg"
+      }
     },
     {
-      "tittle": "Привет, мир!",
-      "tag": [],
-      "text": "",
-      "id": "j694-qa"
-    },
-    {
-      "tittle": "ЫВАВЫА",
+      "tittle": "gdfgdfgdfg",
       "tag": [
-        "FDG"
+        "sdfsd"
       ],
       "text": "",
-      "id": "zrNKVuL"
+      "userId": 1,
+      "id": 3,
+      "user": {
+        "id": 1,
+        "username": "admin",
+        "avatar": "http://localhost:8000/uploads/1737720270699-photo_2024-12-04_01-47-48.jpg"
+      }
+    },
+    {
+      "tittle": "привет!",
+      "userId": 1,
+      "id": 4,
+      "user": {
+        "id": 1,
+        "username": "admin",
+        "avatar": "http://localhost:8000/uploads/1737720270699-photo_2024-12-04_01-47-48.jpg"
+      }
+    },
+    {
+      "tittle": "TEST1",
+      "tag": [
+        "react"
+      ],
+      "text": "",
+      "userId": 1,
+      "id": 5,
+      "user": {
+        "id": 1,
+        "username": "admin",
+        "avatar": "http://localhost:8000/uploads/1737720270699-photo_2024-12-04_01-47-48.jpg"
+      }
+    },
+    {
+      "tittle": "dfgdfgdfgdf",
+      "tag": [],
+      "text": "",
+      "userId": 2,
+      "id": 6
     }
   ],
   "users": [

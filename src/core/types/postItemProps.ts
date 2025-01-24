@@ -1,12 +1,12 @@
 export interface Post {
-    id?:number,
+    id:number,
     tittle?: string;
     tag?: string[];
-    avatar?: string;
-    username?: string;
+    user?:{username:string, avatar:string}
     views?: string;
     comments?: string;
     date?: string;
+    userId:number;
 }
 export interface PostItemProps {
     post: Post;

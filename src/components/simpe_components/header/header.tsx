@@ -14,12 +14,15 @@ const Header = () => {
 
     return (
         <div className={header.header}>
+            <Link to ={'/'}
+            style={{ textDecoration: 'none' }}>
             <div className={header.leftSite}>
                 <div className={header.logo}>
                 <img src={logo} alt="logo" />
                 </div>
                 <p className={header.title}>Orange Forum</p>
             </div>
+            </Link>
             <div className={header.rightSite}>
                 <div className={header.search}>
                 <Input placeholder='Type here to search...' />

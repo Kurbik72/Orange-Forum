@@ -22,7 +22,6 @@ const  postModule = () => {
     const [tag, setTag] = useState<string[]>([]);
     const [loading, setLoading] = useState<boolean>(true); 
     const [error, setError] = useState<string | null>(null);
-    
     const isAuth = useSelector(getUserAuthData);
 
     useEffect(() => {
@@ -48,10 +47,11 @@ const  postModule = () => {
         text,
         tag,
         tittle,
+        userId:Number(isAuth.id),
         
     }  
     setPosts([...posts, newPost]);
-    getPostData({tittle, tag, text});
+    getPostData({tittle, tag, text, userId:Number(isAuth.id)});
     setModalActive(false);
     
     }

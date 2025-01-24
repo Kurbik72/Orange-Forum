@@ -17,7 +17,7 @@ return (
     <div className={avatar.border}>
     <div className={avatar.avatar}  > 
 
-        {user?.avatar ? <img src={user?.avatar} alt={alt} /> : <p>+</p> }
+        {src ?? user?.avatar ? <img src={src ?? user?.avatar} alt={alt} /> : <p>+</p> }
     
 </div>
 <div className={avatar.name}>

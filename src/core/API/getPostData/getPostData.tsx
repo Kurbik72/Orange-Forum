@@ -1,13 +1,13 @@
-import { USER_LOCAL_STORAGE_KEY } from "../../../shared/consts/localstorage";
 
 
 
-export const getPostData = async ({tittle, tag, text} : {tittle: string, tag: string[], text: string}) => {
+export const getPostData = async ({tittle, tag, text,userId} : {tittle: string, tag: string[], text: string,userId:number}) => {
     const url = "http://localhost:8000/posts";
     const post = {
         tittle,
         tag,
         text,
+        userId,
         ...(tag.length > 0 && { tag }),
     }
     try {
