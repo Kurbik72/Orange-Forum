@@ -27,6 +27,9 @@ export const userSlice = createSlice({
                 state.authData
             }
         },
+        logout: (state) => {
+            state.authData = undefined;
+        },
         setAvatar: (state, action: PayloadAction<string>) => {
             if (state.authData) {
                 state.authData.avatar = action.payload;

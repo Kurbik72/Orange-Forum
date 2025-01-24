@@ -1,6 +1,9 @@
 
 
 .addAvatar{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1em;
     width: 100%;
     background-color: #262d34;
     display: flex;
@@ -13,17 +16,19 @@
     max-width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 2em;
 }
 .avatarBlock__column{
     flex-direction: column;
+    
 }
 .avatarBlock__column p{
     font-family: Header;
     color: rgb(255, 255, 255);
     font-size: 1.5em;
 }
-.content button{
+.button{
     width: 112px;
     height: 44px;
     border-radius: 9px;
@@ -48,4 +53,19 @@
 }
 .avatar label {
     cursor: pointer;
+}
+.Leave__Button__btn {
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: Header;
+    font-weight: 14px;
+    color: #FFFFFF;
+    background-color: #f92d2d;
+    width: 50px;;
+    height: 35px;
+}
+.rightBlock{
+    display: flex;
+    align-items: center;
+    justify-content:center;
 }

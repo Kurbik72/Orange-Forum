@@ -11,12 +11,12 @@ export const getPostData = async ({tittle, tag, text} : {tittle: string, tag: st
         ...(tag.length > 0 && { tag }),
     }
     try {
-        const token = localStorage.getItem("token");
+        const token = localStorage.getItem('token');
         const response  = await fetch(url,{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                'Authorization': ` ${token}`, 
+                'Authorization': `Bearer ${token}`, 
             },
             body: JSON.stringify(post),
             

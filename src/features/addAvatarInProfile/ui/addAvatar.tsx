@@ -7,6 +7,7 @@ import { addAvatarInProfile } from '../model/services/addAvatarInProfile';
 import { userActions } from '../../../entities/User';
 import { getAvatarInProfile } from '../model/services/getAvatarInProfile';
 import { AppDispatch } from '../../../app/providers/StoreProvider/config/store';
+import { LeaveButton } from '../../../widgets/ProfileCard/ui/LeaveButton/LeaveButton';
 
 
 export const AddAvatar = memo( () => {
@@ -56,7 +57,7 @@ export const AddAvatar = memo( () => {
         
     }   
 
-    }, [id, dispatch, ]);
+    }, [id, dispatch,]);
 
 
 return (
@@ -76,7 +77,12 @@ return (
     <p>{`@${username}`}</p>
     </div>
     
-    <button >Add Avatar</button>
+    <button className={styles.button} >Add Avatar</button>
+    
+    </div>
+    <div className={styles.rightBlock}>
+
+    <LeaveButton className={styles.Leave__Button__btn}>Exit</LeaveButton>
     </div>
     </div>
 )

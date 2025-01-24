@@ -30,6 +30,14 @@
       "tag": [],
       "text": "",
       "id": "j694-qa"
+    },
+    {
+      "tittle": "ЫВАВЫА",
+      "tag": [
+        "FDG"
+      ],
+      "text": "",
+      "id": "zrNKVuL"
     }
   ],
   "users": [
@@ -37,13 +45,13 @@
       "id": 1,
       "username": "admin",
       "password": "123",
-      "avatar": "http://localhost:8000/uploads/1737574990753-Unofficial_JavaScript_logo_2.svg.png"
+      "avatar": "http://localhost:8000/uploads/1737720270699-photo_2024-12-04_01-47-48.jpg"
     },
     {
       "id": 2,
       "username": "mikhail",
       "password": "123",
-      "avatar": "http://localhost:8000/uploads/1737468895768-photo_2024-12-04_01-47-48.jpg"
+      "avatar": "http://localhost:8000/uploads/1737720291440-photo_2025-01-20_00-30-19.jpg"
     }
   ],
   "profile": {

@@ -12,8 +12,13 @@ const App = () => {
 
     useEffect ( () => {
     const asyncProfileData = async () => {
+        try{
         await  dispatch(userActions.initAuthData());
         await dispatch(getProfileInfo({}))
+    }
+    catch(e){
+        
+    }
     }
     asyncProfileData();
     },[dispatch]);

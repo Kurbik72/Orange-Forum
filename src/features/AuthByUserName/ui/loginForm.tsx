@@ -7,17 +7,19 @@ import { getLoginState } from '../model/selectors/getLoginState/getLoginState';
 import { loginByUsername } from '../model/services/loginByUsername';
 import { authByUsername } from '../model/services/authByUsername';
 import { AppDispatch } from '../../../app/providers/StoreProvider/config/store';
+import { useNavigate } from 'react-router-dom';
+import { getProfileInfo } from '../model/services/getProfileInfo';
 
 interface LoginFormProps {
     
 }
 
 const LoginForm: React.FC<LoginFormProps> = memo (() => {
-
+    const navigate = useNavigate();
     const dispatch:AppDispatch = useDispatch();
     const LoginForm = useSelector(getLoginState)
     const {username, password, error, isLoading} = LoginForm
-
+    
     const onChangeUsername = useCallback((value: string) => {
         dispatch(loginActions.setUsername(value));
     }, [dispatch]);
@@ -26,11 +28,29 @@ const LoginForm: React.FC<LoginFormProps> = memo (() => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
-    const onLoginClick =useCallback( () => {
-        const result = dispatch(authByUsername({username,password}));
-        console.log(result);
+    const onKeyDown = useCallback(async (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if(e.key === 'Enter'){
+            try{
+                await dispatch(authByUsername({username,password})).unwrap();
+                await dispatch(getProfileInfo({}));
+                navigate('/');
+            }
+            catch(e){
+                
+            }
+        }
+    },[username, password, navigate, dispatch]);
+
+    const onLoginClick =useCallback(async  () => {
+        try{
+        await dispatch(authByUsername({username,password})).unwrap();
+        await dispatch(getProfileInfo({}));
+        navigate('/');
+    }
+    catch(e){
         
-    },[ dispatch,  password, username])
+    }
+    },[ dispatch,  password, username, !error, navigate]);
     
     
 
@@ -46,6 +66,7 @@ const LoginForm: React.FC<LoginFormProps> = memo (() => {
     placeholder="Enter your e-mail" 
     onChange={(e) => onChangeUsername(e.target.value)}
     value={username}
+    onKeyDown={onKeyDown}
     />
 
     <label>Password</label>
@@ -55,6 +76,7 @@ const LoginForm: React.FC<LoginFormProps> = memo (() => {
     placeholder="Enter your pasword" 
     onChange={(e) => onChangePassword(e.target.value)}
     value={password}
+    onKeyDown={onKeyDown}
     />
 
     <div className={login.rememberme}>
@@ -69,6 +91,7 @@ const LoginForm: React.FC<LoginFormProps> = memo (() => {
     </div>
     <button
     onClick={onLoginClick}
+    
     disabled = {isLoading}>
     Войти
     </button>

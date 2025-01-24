@@ -8,3 +8,19 @@
     justify-content: center;
     padding: 5em;
 }
+.Leave__Button__btn{
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: Header;
+    font-weight: 14px;
+    color: #FFFFFF;
+    background-color: #f92d2d;
+    width: 50px;;
+    height: 35px;
+
+}
+.Leave__Button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
