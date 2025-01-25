@@ -8,7 +8,7 @@ import { userActions } from '../../../entities/User';
 import { getAvatarInProfile } from '../model/services/getAvatarInProfile';
 import { AppDispatch } from '../../../app/providers/StoreProvider/config/store';
 import { LeaveButton } from '../../../widgets/ProfileCard/ui/LeaveButton/LeaveButton';
-
+import { DeleteButton } from '../../../features/deleteAvatarInProfile';
 
 export const AddAvatar = memo( () => {
 
@@ -24,8 +24,7 @@ export const AddAvatar = memo( () => {
     useEffect(() => {
         const fetchAvatar = async () => {
             try {
-                const result = await dispatch(getAvatarInProfile({ userId: id })).unwrap();
-                console.log(result); // Здесь будет объект с актуальными данными
+                await dispatch(getAvatarInProfile({ userId: id })).unwrap();
             } catch (error) {
                 console.error('Error fetching avatar:', error);
             }
@@ -76,8 +75,7 @@ return (
     </div>
     <p>{`@${username}`}</p>
     </div>
-    
-    <button className={styles.button} >Add Avatar</button>
+    <DeleteButton className={styles.button}/>
     
     </div>
     <div className={styles.rightBlock}>

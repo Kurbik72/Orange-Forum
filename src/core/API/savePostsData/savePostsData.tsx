@@ -7,7 +7,7 @@ export const savePostsData = async (): Promise<Post[]> => {
         if (!response.ok) {
             throw new Error(`HTTP ошибка: ${response.status}`);
         }
-        return posts
+        return posts;
     
     
 }

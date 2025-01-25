@@ -9,6 +9,7 @@ import { authByUsername } from '../model/services/authByUsername';
 import { AppDispatch } from '../../../app/providers/StoreProvider/config/store';
 import { useNavigate } from 'react-router-dom';
 import { getProfileInfo } from '../model/services/getProfileInfo';
+import { Link } from 'react-router-dom';
 
 interface LoginFormProps {
     
@@ -95,7 +96,7 @@ const LoginForm: React.FC<LoginFormProps> = memo (() => {
     disabled = {isLoading}>
     Войти
     </button>
-    <div className={login.line}><a href="#">Забыли пароль?</a>
+    <div className={login.line}><Link to = {'/signup'}>Создать аккаунт</Link>
     </div>
     </div>
     {error && <div className={login.error}><p>Неправильный пароль или имя пользователя</p></div>}

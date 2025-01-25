@@ -58,7 +58,53 @@ const authMiddleware = (req, res, next) => {
     }
 };
 
+server.post('/register', (req, res) => {
+    try {
+        const { username, password } = req.body;
+        
+        // Валидация данных
+        if (!username || !password) {
+            return res.status(400).json({ message: 'Username and password are required' });
+        }
 
+        // Проверка существования пользователя
+        const users = router.db.get('users').value();
+        const existingUser = users.find(u => u.username === username);
+        
+        if (existingUser) {
+            return res.status(409).json({ message: 'Username already exists' });
+        }
+
+        // Создание нового пользователя
+        const newUser = {
+            id: Date.now(), // Генерируем уникальный ID
+            username,
+            password, // В реальном проекте пароль нужно хешировать!
+            avatar: null,
+        };
+
+        // Сохраняем пользователя
+        router.db.get('users').push(newUser).write();
+
+        // Генерируем токен
+        const token = jwt.sign(
+            { id: newUser.id, username: newUser.username }, 
+            'kkk', 
+            { expiresIn: '1h' }
+        );
+
+        res.status(201).json({ 
+            token,
+            user: {
+                id: newUser.id,
+                username: newUser.username,
+                avatar: newUser.avatar
+            }
+        });
+    } catch (e) {
+        res.status(500).json({ message: e.message });
+    }
+});
 
 // Эндпоинт для логина
 server.post('/login', (req, res) => {
@@ -77,6 +123,8 @@ server.post('/login', (req, res) => {
         res.status(500).json({ message: e.message });
     }
 });
+
+
 
 
 server.get('/getProfileInfo', authMiddleware, (req, res) => {
@@ -154,9 +202,43 @@ router.render = (req, res) => {
     res.jsonp(res.locals.data);
 };
 
+server.delete('/users/avatar', authMiddleware, (req, res) => {
+    try {
+        const userId = req.user.id;
+        const user = router.db.get('users').find({ id: userId }).value();
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Удаление файла аватара
+        if (user.avatar) {
+            const filename = user.avatar.split('/').pop();
+            const filePath = path.resolve(__dirname, 'uploads', filename);
+            
+            if (fs.existsSync(filePath)) {
+                fs.unlinkSync(filePath);
+            }
+        }
+
+        // Обновление записи пользователя
+        router.db.get('users')
+            .find({ id: userId })
+            .assign({ avatar: null })
+            .write();
+
+        res.json({ message: 'Avatar deleted successfully' });
+    } catch (e) {
+        res.status(500).json({ message: e.message });
+    }
+});
+
+
+
 // Статические файлы
 server.use('/uploads', express.static(path.resolve(__dirname, 'uploads')));
 server.use(router);
+
 
 // Запуск сервера
 server.listen(8000, () => {

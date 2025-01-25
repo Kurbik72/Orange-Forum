@@ -9,6 +9,8 @@ import { EditorContext } from '../../EditorContext';
 import TittleInput from '../../ui/TittleInput';
 import Tags from '../../ui/tags';
 import '../../../styles/tags.css'
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from '../../../entities/User/model/selectors/getUserAuthData/getUserAuthData';
 
 
 
@@ -36,6 +38,7 @@ const PostModal: React.FC<PostModalProps> = ({
     const {initEditor} = useContext(EditorContext);
     const editorRef = useRef(null);
 
+const user = useSelector(getUserAuthData);
 
     const onCloseModal = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Escape') {
@@ -68,7 +71,7 @@ const PostModal: React.FC<PostModalProps> = ({
         <hr className={modal.modal__line} />
         <div className={modal.content}>
             <div  className={modal.modal__profile}>
-            <Avatar  username={'Mikhail'} />
+            <Avatar  username={user?.username} />
             </div>
             <div  className={modal.inputTitle}>
             <TittleInput tittle={tittle} setTittle={setTittle} />

@@ -14,7 +14,9 @@ const App = () => {
     const asyncProfileData = async () => {
         try{
         await  dispatch(userActions.initAuthData());
-        await dispatch(getProfileInfo({}))
+        if(localStorage.getItem('token')){
+            await dispatch(getProfileInfo({}))
+        }
     }
     catch(e){
         
