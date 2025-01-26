@@ -35,7 +35,7 @@ const PostModal: React.FC<PostModalProps> = ({
     tag,
     setTag,
 }) => {
-    const {initEditor} = useContext(EditorContext);
+    const {initEditor,} = useContext(EditorContext);
     const editorRef = useRef(null);
 
 const user = useSelector(getUserAuthData);

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import post from './post.module.css'
 import CreateBtn from '../../ui/button/button';
 import CreateInput from '../../ui/createInput/createdInput';
@@ -11,7 +11,9 @@ import { savePostsData } from '../../../core/API/savePostsData/savePostsData';
 import Loading from '../../../assets/icons/loading.gif';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData } from '../../../entities/User/model/selectors/getUserAuthData/getUserAuthData';
-import { EvalSourceMapDevToolPlugin } from 'webpack';
+import {EditorContext} from '../../../components/EditorContext';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const  postModule = () => {
@@ -22,7 +24,12 @@ const  postModule = () => {
     const [tag, setTag] = useState<string[]>([]);
     const [loading, setLoading] = useState<boolean>(true); 
     const [error, setError] = useState<string | null>(null);
+    const [editorData, setEditorData] = useState(null);
     const isAuth = useSelector(getUserAuthData);
+
+
+        const { editorInstance } = useContext(EditorContext);
+        const navigate = useNavigate();
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -46,16 +53,23 @@ const  postModule = () => {
         id: Date.now(),
         text,
         tag,
-        tittle,
         userId:Number(isAuth.id),
         
-    }  
+    }
+    const dataFunc = async () => {
+        const data = await editorInstance.current?.save()
+        console.log(data)
+        setEditorData(data);
+    };  
+    dataFunc().then(() => {
+        navigate('/pagetest', { state: { editorData } }); // Переход с данными
+    });
+
     setPosts([...posts, newPost]);
     getPostData({tittle, tag, text, userId:Number(isAuth.id)});
     setModalActive(false);
     
     }
-    
     
 
     const onButtonClick = () => {
@@ -64,7 +78,7 @@ const  postModule = () => {
         }else{
             alert('Вы не авторизованы');
         }
-            
+        
 
     }
     

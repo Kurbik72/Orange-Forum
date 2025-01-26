@@ -3,13 +3,14 @@ import { HomePageAsync } from "../../pagesRender/homepage/homepage.async";
 import { LoginPageAsync } from "../../pagesRender/loginPage/loginPage.async";
 import { ProfilePageAsync } from "../../pagesRender/Profile/Profile.async";
 import { SignUpPageAsync } from "../../pagesRender/signupPage/signUpPage.async";
-
+import { PostPageAsync } from "../../pagesRender/PostPage/PostPage.async";
 
 export enum AppRoutes{
     HOME='home',
     LOGIN='login', 
     PROFILE='profile',
     SIGNUP='signup',
+    PAGETEST= 'Pagetest',
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
@@ -17,6 +18,7 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.LOGIN]: '/login',
     [AppRoutes.PROFILE]: '/profile',
     [AppRoutes.SIGNUP]: '/signup',
+    [AppRoutes.PAGETEST]: '/pagetest',
 
 
     
@@ -37,7 +39,12 @@ export const routeConfig: Record<AppRoutes, RouteProps> ={
     [AppRoutes.SIGNUP]:{
         path:RoutePath.signup,
         element:<SignUpPageAsync/>
-    }
+    },
+    [AppRoutes.PAGETEST]:{
+        path:RoutePath.Pagetest,
+        element:<PostPageAsync/>
+    },
+
 
 
 }

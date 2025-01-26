@@ -27,6 +27,7 @@ import InlineCode from '@editorjs/inline-code';
 interface EditorContextType {
     initEditor: () => void;
     editorInstance: React.RefObject<EditorJS | null>;
+
 }
 export const EditorContext = createContext<EditorContextType | undefined>(undefined);
 
@@ -64,7 +65,7 @@ export  default function EditorContextProvider({children}: EditorContextProvider
             
             
         })
-        editorInstance.current = editor
+        editorInstance.current = editor;
     }
     return (
         <EditorContext.Provider value={{initEditor,editorInstance}}>

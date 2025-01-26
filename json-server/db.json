@@ -13,7 +13,7 @@
       "user": {
         "id": 1,
         "username": "admin",
-        "avatar": "http://localhost:8000/uploads/1737801078141-photo_2024-12-04_01-47-48.jpg"
+        "avatar": "http://localhost:8000/uploads/1737903969518-photo_2024-12-04_01-47-48.jpg"
       }
     },
     {
@@ -25,7 +25,7 @@
       "user": {
         "id": 1,
         "username": "admin",
-        "avatar": "http://localhost:8000/uploads/1737801078141-photo_2024-12-04_01-47-48.jpg"
+        "avatar": "http://localhost:8000/uploads/1737903969518-photo_2024-12-04_01-47-48.jpg"
       }
     },
     {
@@ -39,7 +39,7 @@
       "user": {
         "id": 1,
         "username": "admin",
-        "avatar": "http://localhost:8000/uploads/1737801078141-photo_2024-12-04_01-47-48.jpg"
+        "avatar": "http://localhost:8000/uploads/1737903969518-photo_2024-12-04_01-47-48.jpg"
       }
     },
     {
@@ -49,7 +49,7 @@
       "user": {
         "id": 1,
         "username": "admin",
-        "avatar": "http://localhost:8000/uploads/1737801078141-photo_2024-12-04_01-47-48.jpg"
+        "avatar": "http://localhost:8000/uploads/1737903969518-photo_2024-12-04_01-47-48.jpg"
       }
     },
     {
@@ -63,7 +63,7 @@
       "user": {
         "id": 1,
         "username": "admin",
-        "avatar": "http://localhost:8000/uploads/1737801078141-photo_2024-12-04_01-47-48.jpg"
+        "avatar": "http://localhost:8000/uploads/1737903969518-photo_2024-12-04_01-47-48.jpg"
       }
     },
     {
@@ -75,7 +75,7 @@
       "user": {
         "id": 2,
         "username": "mikhail",
-        "avatar": "http://localhost:8000/uploads/1737800631126-Unofficial_JavaScript_logo_2.svg.png"
+        "avatar": "http://localhost:8000/uploads/1737809178678-Unofficial_JavaScript_logo_2.svg.png"
       }
     },
     {
@@ -89,7 +89,7 @@
       "user": {
         "id": 2,
         "username": "mikhail",
-        "avatar": "http://localhost:8000/uploads/1737800631126-Unofficial_JavaScript_logo_2.svg.png"
+        "avatar": "http://localhost:8000/uploads/1737809178678-Unofficial_JavaScript_logo_2.svg.png"
       }
     },
     {
@@ -107,6 +107,73 @@
         "username": "Kuregdg",
         "avatar": "http://localhost:8000/uploads/1737805724259-photo_2025-01-20_00-30-19.jpg"
       }
+    },
+    {
+      "tittle": "dfgdfgd",
+      "tag": [],
+      "text": "",
+      "userId": 1,
+      "id": 9,
+      "user": {
+        "id": 1,
+        "username": "admin",
+        "avatar": "http://localhost:8000/uploads/1737903969518-photo_2024-12-04_01-47-48.jpg"
+      }
+    },
+    {
+      "tittle": "sdfsdfsf",
+      "tag": [],
+      "text": "",
+      "userId": 1,
+      "id": 10,
+      "user": {
+        "id": 1,
+        "username": "admin",
+        "avatar": "http://localhost:8000/uploads/1737903969518-photo_2024-12-04_01-47-48.jpg"
+      }
+    },
+    {
+      "tittle": "gfdg",
+      "tag": [],
+      "text": "",
+      "userId": 1,
+      "id": 11,
+      "user": {
+        "id": 1,
+        "username": "admin",
+        "avatar": "http://localhost:8000/uploads/1737903969518-photo_2024-12-04_01-47-48.jpg"
+      }
+    },
+    {
+      "tittle": "g",
+      "tag": [],
+      "text": "",
+      "userId": 1,
+      "id": 12,
+      "user": {
+        "id": 1,
+        "username": "admin",
+        "avatar": "http://localhost:8000/uploads/1737903969518-photo_2024-12-04_01-47-48.jpg"
+      }
+    },
+    {
+      "tittle": "dgfddf",
+      "tag": [],
+      "text": "",
+      "userId": 1,
+      "id": 13,
+      "user": {
+        "id": 1,
+        "username": "admin",
+        "avatar": "http://localhost:8000/uploads/1737903969518-photo_2024-12-04_01-47-48.jpg"
+      }
+    },
+    {
+      "tittle": "ва",
+      "tag": [],
+      "text": "",
+      "userId": 1,
+      "id": 14
     }
   ],
   "users": [
@@ -114,13 +181,13 @@
       "id": 1,
       "username": "admin",
       "password": "123",
-      "avatar": "http://localhost:8000/uploads/1737801078141-photo_2024-12-04_01-47-48.jpg"
+      "avatar": "http://localhost:8000/uploads/1737903969518-photo_2024-12-04_01-47-48.jpg"
     },
     {
       "id": 2,
       "username": "mikhail",
       "password": "123",
-      "avatar": "http://localhost:8000/uploads/1737800631126-Unofficial_JavaScript_logo_2.svg.png"
+      "avatar": "http://localhost:8000/uploads/1737809178678-Unofficial_JavaScript_logo_2.svg.png"
     },
     {
       "id": 1737804577389,
@@ -150,6 +217,12 @@
       "id": 1737806661374,
       "username": "gdfgdfgd",
       "password": "dfgdfgdfgddfdfg",
+      "avatar": null
+    },
+    {
+      "id": 1737901064618,
+      "username": "gdgdfgdg",
+      "password": "dgdfg",
       "avatar": null
     }
   ],
