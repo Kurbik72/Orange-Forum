@@ -1,7 +1,9 @@
 
 
 
-export const getPostData = async ({tittle, tag, text} : {tittle: string, tag: string[], text: string}) => {
+import { Post } from "../../../core/types/postItemProps";
+
+export const getPostData = async ({tittle, tag, text} : {tittle: string, tag: string[], text: string}): Promise<Post> => {
     const url = "http://localhost:8000/posts";
     const post = {
         tittle,
@@ -16,10 +18,17 @@ export const getPostData = async ({tittle, tag, text} : {tittle: string, tag: st
             },
             body: JSON.stringify(post),
         });
-        
-        
+
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+
+        // json-server returns the created object (with id)
+        const created: Post = await response.json();
+        return created;
     }
-    catch{
-        console.error("Ошибка при добавлении данных:");
+    catch(err){
+        console.error("Ошибка при добавлении данных:", err);
+        throw err;
     }
 }

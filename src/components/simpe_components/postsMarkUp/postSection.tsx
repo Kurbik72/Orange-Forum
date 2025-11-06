@@ -35,16 +35,25 @@ const  postModule = () => {
     }, []);
     
 
-    const combinedChangeHandler = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const combinedChangeHandler = async (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault();
-    const newPost = {
-        id: Date.now(),
-        text,
-        tag,
-        tittle,
-    }
-    setPosts([...posts, newPost]);
-    getPostData({tittle, tag, text});
+        try{
+            // persist to backend and get created post
+            const created = await getPostData({tittle, tag, text});
+
+            // prepend server-created post to state so UI updates immediately
+            setPosts(prev => [created, ...prev]);
+
+            // close modal and reset inputs
+            setModalActive(false);
+            setTittle('');
+            setText('');
+            setTag([]);
+        } catch (err) {
+            // keep previous local state; report error
+            setError(`Ошибка при добавлении поста: ${err?.message || err}`);
+            console.error('Post create error:', err);
+        }
     }
     
     

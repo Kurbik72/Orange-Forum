@@ -22,6 +22,7 @@ interface EditorContextProviderProps {
 export  default function EditorContextProvider({children}: EditorContextProviderProps) {
     const editorInstance = useRef(null)
     const initEditor = () => {
+        try {
         const editor = new EditorJS({
             holder:'editorjs',
             placeholder: "Type here",
@@ -44,22 +45,23 @@ export  default function EditorContextProvider({children}: EditorContextProvider
                 },
                 delimiter: Delimiter,
                 inlineCode: InlineCode,
-                Color: {
+                // register under lowercase 'color' so toolbar name 'color' matches
+                color: {
                     class: ColorPlugin,
                     config: {
-                        type: "text", // Определяет, где будет использоваться цвет (текст/фон)
+                        type: "text",
                         colorCollections: [
-                        "#FF5733",
-                        "#33FF57",
-                        "#3357FF",
-                        "#F3FF33",
-                        "#FF33F3",
-                        "#33FFF3",
-                        "#000000",
-                        "#FFFFFF",
+                            "#FF5733",
+                            "#33FF57",
+                            "#3357FF",
+                            "#F3FF33",
+                            "#FF33F3",
+                            "#33FFF3",
+                            "#000000",
+                            "#FFFFFF",
                         ],
                         defaultColor: '#FF1300',
-                        customPicker: true ,
+                        customPicker: true,
                     },
                 },
                 
@@ -69,6 +71,10 @@ export  default function EditorContextProvider({children}: EditorContextProvider
             
         })
         editorInstance.current = editor
+        } catch (err) {
+            // eslint-disable-next-line no-console
+            console.error('Editor init error:', err);
+        }
     }
     return (
         <EditorContext.Provider value={{initEditor,editorInstance}}>
