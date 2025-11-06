@@ -7,11 +7,15 @@ export const savePostsData = async (): Promise<Post[]> => {
         if (!response.ok) {
             throw new Error(`HTTP ошибка: ${response.status}`);
         }
-        return posts.map((post: { tittle: string; tag: string[]; text: string }) => ({
-            tittle: post.tittle,
-            tag: post.tag,
-            text: post.text,
-        }));
+        // include id from backend and return newest-first (reverse order)
+        return posts
+            .map((post: { id?: any; tittle: string; tag: string[]; text: string }) => ({
+                id: post.id,
+                tittle: post.tittle,
+                tag: post.tag,
+                text: post.text,
+            }))
+            .reverse();
     
     
 }

@@ -8,8 +8,7 @@ import {buildDevServer} from "./buildDevServer";
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
     const {paths, mode, isDev} = options;
-
-    return {
+    const config: webpack.Configuration = {
         mode: mode,
         entry: paths.entry,
         output: {
@@ -24,6 +23,11 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         resolve: buildResolvers(),
         devtool: isDev ? 'inline-source-map' : undefined,
         devServer: isDev ? buildDevServer(options) : undefined,
-        
-    }
+    };
+
+    // Log the full webpack configuration for debugging devServer schema issues
+    // eslint-disable-next-line no-console
+    console.log('BuildWebpackConfig - webpack config devServer:', JSON.stringify(config.devServer, null, 2));
+
+    return config;
 }

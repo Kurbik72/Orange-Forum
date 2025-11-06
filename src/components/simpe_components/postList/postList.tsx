@@ -9,7 +9,12 @@ const postList: React.FC<PostListProps> = ({posts})     => {
 return (
     <div>
     <div className={postlist.postList}>
-            {posts.map(post => <PostItem post={post} key= {post.tittle}/>)}        
+            {posts.map((post, idx) => (
+                <PostItem
+                    post={post}
+                    key={post.id ?? post.tittle ?? idx}
+                />
+            ))}
         </div>
     </div>
 )
